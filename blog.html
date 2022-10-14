@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/blog.css" />
+    <title>My Project</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="#"><img src="./assets/img/brandred.png" /></a>
+          </li>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="#"><b>My Project</b></a>
+          </li>
+        </ul>
+        <a href="form.html" class="btn">Contact Me</a>
+      </nav>
+    </header>
+    <div class="blog">
+      <div class="blog-form">
+        <div class="form-container">
+          <form onsubmit="addBlog(event); this.reset(); return false;">
+            <h1>ADD MY PROJECT</h1>
+            <div class="form-groups">
+              <label for="input-title">Project Name:</label>
+              <input maxlength="50" type="text" id="input-title" required />
+            </div>
+            <div class="progress">
+              <div class="form-groups">
+                <label for="input-start">Start Date:</label>
+                <input type="date" id="input-start" required />
+              </div>
+              <div class="form-groups">
+                <label for="input-end">End Date:</label>
+                <input type="date" id="input-end" required />
+              </div>
+            </div>
+            <div class="form-groups">
+              <label for="input-content">Description</label>
+              <textarea
+                minlength="50"
+                maxlength="150"
+                id="input-content"
+                required
+              ></textarea>
+            </div>
+            <div style="display: flex">
+              <label>
+                <input id="checkbox" type="checkbox" />
+                Node js
+              </label>
+              <label>
+                <input
+                  id="checkbox"
+                  style="margin-left: 50px"
+                  type="checkbox"
+                />
+                Next js
+              </label>
+            </div>
+            <div style="display: flex; margin-bottom: 50px">
+              <label>
+                <input id="checkbox" type="checkbox" />
+                React js
+              </label>
+              <label>
+                <input
+                  id="checkbox"
+                  style="margin-left: 45px"
+                  type="checkbox"
+                />
+                Typescript
+              </label>
+            </div>
+            <div class="form-groups">
+              <label>Upload Image</label>
+              <label class="choose-file" for="input-blog-image">
+                <p>Choose file</p>
+                <i class="fa-sharp fa-solid fa-paperclip"></i>
+              </label>
+              <input type="file" id="input-blog-image" hidden />
+            </div>
+            <div class="btn-post">
+              <button class="btn-submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="list-container">
+        <h1>MY PROJECT</h1>
+      </div>
+      <div id="contents" class="blog-list">
+        <div class="blog-list-item">
+          <div class="blog-image">
+            <img src="./assets/img/vicky-unsplash.jpg" />
+          </div>
+          <div class="blog-info">
+            <h3>
+              <a href="blog-detail.html" target="_blank">Dumbways Web App</a>
+            </h3>
+            <div class="detail-blog-duration">
+              <p>Duration: 25 Days</p>
+            </div>
+            <div class="blog-content">
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa
+                nemo quisquam rerum libero quo, qui soluta quasi quibusdam
+                magni, minus velit blanditiis facere! Deserunt, laboriosam?
+              </p>
+            </div>
+            <div class="download-apps">
+              <a href="#">
+                <i class="fa-brands fa-google-play fa-md"></i>
+              </a>
+              <a href="#">
+                <i class="fa-brands fa-android fa-md"></i>
+              </a>
+              <a href="#">
+                <i class="fa-brands fa-java fa-md"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <p style="font-size: 10px">1 minute(s) ago</p>
+            <p style="font-size: 12px">14 Oct 2022 19:41 WIB ~ Riki Wahyudi</p>
+          </div>
+          <div class="btn-group">
+            <button class="btn-edit">edit</button>
+            <button class="btn-delete">delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/blog.js"></script>
+  </body>
+</html>
