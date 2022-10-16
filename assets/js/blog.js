@@ -7,14 +7,13 @@ function addBlog(event) {
   let content = document.getElementById("input-content").value;
   let startProject = document.getElementById("input-start").value;
   let endProject = document.getElementById("input-end").value;
-  let image = document.getElementById("input-blog-image");
-  // let checkbox = document.getElementById('checkbox').checked;
+  let image = document.getElementById("input-image");
 
   let difference =
     new Date(startProject).getTime() - new Date(endProject).getTime();
   let differenceDays = Math.abs(difference / (1000 * 3600 * 24));
 
-  //   mengambil url gambar untik di tampilkan
+  //   membuat url gambar untuk di tampilkan
   image = URL.createObjectURL(image.files[0]);
 
   const blog = {
@@ -36,54 +35,55 @@ function renderBlog() {
   // for (let i = 0; i < dataBlog.length; i++) {
   for (const i in dataBlog) {
     document.getElementById("contents").innerHTML += `
+
     <div class="blog-list-item">
-    <div class="blog-image">
-      <img src="${dataBlog[i].image}" />
-    </div>
-    <div class="blog-info">
-      <h3>
-        <a href="blog-detail.html" target="_blank"
-          >${dataBlog[i].title}</a
-        >
-      </h3>
-      <div class="detail-blog-duration">
-        <p>
-        Duration: ${dataBlog[i].differenceDays} Days</p>
-      </div>
-      <div class="blog-content">
-        <p>
-        ${dataBlog[i].content}
-        </p>
-      </div>
-      <div class="download-apps">
-      <a href="#">
-        <i class="fa-brands fa-google-play fa-md"></i>
-      </a>
-      <a href="#">
-        <i class="fa-brands fa-android fa-md"></i>
-      </a>
-      <a href="#">
-        <i class="fa-brands fa-java fa-md"></i>
-      </a>
-    </div>
-    </div>
-    <div>
-    <p style="font-size:10px"> ${getDistanceTime(dataBlog[i].postAt)}</P>
-    <p style="font-size:12px">
-        ${getFullTime(dataBlog[i].postAt)} ~ ${dataBlog[i].author}
-        </p>
-    </div>
-    <div class="btn-group">
-      <button class="btn-edit">edit</button>
-      <button class="btn-delete">delete</button>
-    </div>
-  </div>
+            <div class="blog-image">
+              <img src="${dataBlog[i].image}" />
+            </div>
+            <div class="blog-info">
+              <h4>
+                <a href="blog-detail.html" target="_blank">${
+                  dataBlog[i].title
+                }</a>
+              </h4>
+              <div class="detail-blog-duration">
+                <p>Duration: ${dataBlog[i].differenceDays} Days</p>
+              </div>
+              <div class="blog-content">
+                <p>
+                ${dataBlog[i].content}
+                </p>
+              </div>
+              <div class="download-apps">
+                <a href="#">
+                  <i class="fa-brands fa-google-play fa-md"></i>
+                </a>
+                <a href="#">
+                  <i class="fa-brands fa-android fa-md"></i>
+                </a>
+                <a href="#">
+                  <i class="fa-brands fa-java fa-md"></i>
+                </a>
+              </div>
+            </div>
+            <div>
+              <p style="font-size: 10px">${getDistanceTime(
+                dataBlog[i].postAt
+              )}</p>
+              <p style="font-size: 12px">
+              ${getFullTime(dataBlog[i].postAt)} ~ ${dataBlog[i].author}
+              </p>
+            </div>
+            <div class="btn-group">
+              <button class="btn-edit">edit</button>
+              <button class="btn-delete">delete</button>
+            </div>
+          </div>
     `;
   }
 }
 
 function getFullTime(time) {
-  // time = new Date();
   const monthName = [
     "Jan",
     "Feb",
@@ -150,8 +150,3 @@ function getDistanceTime(time) {
 setInterval(function () {
   renderBlog();
 }, 5000);
-
-// setInterval(intervalFunction, 3000)
-// function intervalFunction() {
-//     renderBlog()
-// }

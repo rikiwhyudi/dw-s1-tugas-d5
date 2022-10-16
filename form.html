@@ -4,75 +4,72 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/style.css" />
-    <link rel="stylesheet" href="./assets/form.css" />
-    <title>Send message..</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/form.css" />
+    <title>Contact Me</title>
   </head>
   <body>
     <header>
       <nav>
-        <ul>
-          <li>
-            <a href="#"><img src="./assets/img/brandred.png" /></a>
-          </li>
-          <li><a href="/">Home</a></li>
-          <li><a href="blog.html">My Project</a></li>
-        </ul>
-        <a href="/" class="btn">Home</a>
+        <div class="brands">
+          <img src="./assets/img/brandred.png" alt="brands" class="logo" />
+        </div>
+        <div class="nav-left">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="blog.html">My Project</a></li>
+          </ul>
+        </div>
+        <div class="nav-right">
+          <a href="/" class="btn home">Home</a>
+        </div>
       </nav>
     </header>
-    <div id="main">
-      <form action="#">
-        <div class="title">
-          <h1>GET IN TOUCH</h1>
+
+    <main>
+      <div class="form-container">
+        <div class="form-input">
+          <h3>GET IN TOUCH</h3>
+          <form action="#">
+            <div class="colm-group">
+              <label for="input-name">Name:</label>
+              <input type="text" id="input-name" required />
+              <label for="input-email">Email:</label>
+              <input type="email" id="input-email" required />
+            </div>
+            <div class="row-group">
+              <label for="input-phone"
+                >Phone Number:
+                <input
+                  type="tel"
+                  minlength="8"
+                  maxlength="13"
+                  id="input-phone"
+                  required
+                />
+              </label>
+              <label for="input-subject"
+                >Subject:
+                <select name="subject" id="input-subject">
+                  <option selected>Select</option>
+                  <option value="FrontEnd">FrontEnd</option>
+                  <option value="BackEnd">BackEnd</option>
+                  <option value="Fullstack">Fullstack</option>
+                </select>
+              </label>
+            </div>
+            <label for="input-message">Send Message:</label>
+            <textarea
+              name="input-message"
+              id="input-message"
+              rows="5"
+              required
+            ></textarea>
+            <button onclick="showData();" class="btn send">submit</button>
+          </form>
         </div>
-        <div class="name">
-          <label for="input-name">Name: </label>
-          <input placeholder="John Doe" type="text" id="input-name" required />
-        </div>
-        <div class="email">
-          <label for="input-email" required>Email: </label>
-          <input placeholder="example@mail.com" type="email" id="input-email" />
-        </div>
-        <div class="telepon">
-          <label for="input-phone">Handphone: </label>
-          <input
-            placeholder="08777123456"
-            type="tel"
-            id="input-phone"
-            required
-          />
-        </div>
-        <div class="subject">
-          <label for="input-subject">Subject: </label>
-          <select id="input-subject" required>
-            <option value="" hidden>Select</option>
-            <option>FrontEnd</option>
-            <option>BackEnd</option>
-            <option>Fullstack</option>
-          </select>
-        </div>
-        <div class="message">
-          <label for="input-message">Your Message: </label>
-          <textarea
-            placeholder="Send Message!"
-            id="input-message"
-            cols="60"
-            rows="5"
-            required
-          ></textarea>
-        </div>
-        <div class="submit">
-          <button type="submit" class="send" onclick="ShowData()">
-            Submit
-          </button>
-        </div>
-      </form>
-    </div>
-    <script src="./assets/script.js"></script>
+      </div>
+    </main>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>

@@ -1,5 +1,4 @@
-function ShowData() {
-  console.log("hello boss");
+function showData() {
   const name = document.getElementById("input-name").value;
   const email = document.getElementById("input-email").value;
   const phone = document.getElementById("input-phone").value;
